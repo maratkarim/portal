@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PortalApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(PortalApplication.class, args);
+//		hello
 	}
 
 }
