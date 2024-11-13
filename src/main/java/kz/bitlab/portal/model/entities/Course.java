@@ -1,4 +1,4 @@
-package kz.bitlab.portal.model;
+package kz.bitlab.portal.model.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

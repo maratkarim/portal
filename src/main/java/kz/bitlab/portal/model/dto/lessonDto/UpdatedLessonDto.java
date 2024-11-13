@@ -1,4 +1,4 @@
-package kz.bitlab.portal.dto.lessonDto;
+package kz.bitlab.portal.model.dto.lessonDto;
 
 import lombok.Data;
 

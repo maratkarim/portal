@@ -1,4 +1,4 @@
-package kz.bitlab.portal.model;
+package kz.bitlab.portal.model.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Lesson {
+public class Chapter {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,16 +21,15 @@ public class Lesson {
 
     private String description;
 
-    private String context;
-
-    @Column(name = "order_lesson", nullable = false)
+    @Column(name = "order_chapter", nullable = false)
     private int order;
 
     private LocalDateTime createdTime;
 
     private LocalDateTime updatedTime;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "chapter_id", nullable = false)
-    Chapter chapter;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "course_id", nullable = false)
+    Course course;
+
 }

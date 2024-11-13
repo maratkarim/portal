@@ -1,4 +1,4 @@
-package kz.bitlab.portal.dto.lessonDto;
+package kz.bitlab.portal.model.dto.lessonDto;
 
 import lombok.Data;
 
@@ -9,4 +9,6 @@ public class CreateLessonDto {
     private String description;
 
     private String context;
+
+    private Long chapterId;
 }

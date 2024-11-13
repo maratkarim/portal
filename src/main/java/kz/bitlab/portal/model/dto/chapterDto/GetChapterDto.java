@@ -1,9 +1,11 @@
-package kz.bitlab.portal.dto.chapterDto;
+package kz.bitlab.portal.model.dto.chapterDto;
 
-import kz.bitlab.portal.model.Course;
+import kz.bitlab.portal.model.dto.lessonDto.GetLessonDto;
+import kz.bitlab.portal.model.entities.Course;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 public class GetChapterDto {
@@ -11,7 +13,7 @@ public class GetChapterDto {
 
     private String name;
 
-    private String desciption;
+    private String description;
 
     private int order;
 
@@ -20,4 +22,6 @@ public class GetChapterDto {
     private LocalDateTime updatedTime;
 
     private Course course;
+
+    private List<GetLessonDto> lessons;
 }
