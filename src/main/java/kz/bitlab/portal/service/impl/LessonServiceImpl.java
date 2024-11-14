@@ -2,6 +2,7 @@ package kz.bitlab.portal.service.impl;
 
 import kz.bitlab.portal.exception.ChapterNotFoundException;
 import kz.bitlab.portal.exception.CourseNotFoundException;
+import kz.bitlab.portal.exception.LessonNotFoundException;
 import kz.bitlab.portal.model.dto.lessonDto.CreateLessonDto;
 import kz.bitlab.portal.model.dto.lessonDto.GetLessonDto;
 import kz.bitlab.portal.model.dto.lessonDto.UpdatedLessonDto;
@@ -124,12 +125,18 @@ public class LessonServiceImpl implements LessonService {
         Lesson lesson = lessonRepository.findById(id)
                 .orElseThrow(()-> {
                     log.error("Урок не найден: {}", id);
-                    return new CourseNotFoundException("Урок не найден");
+                    return new LessonNotFoundException("Урок не найден");
                 });
+        System.out.println(lesson.getId());
+        System.out.println(lesson.getName());
         log.debug("Ищем урок по ID {}", id);
 
         log.info("Урок по ID: {}!", id);
-        return lessonMapper.toGetLessonDto(lesson);
+        GetLessonDto lessonDto = lessonMapper.toGetLessonDto(lesson);
+        System.out.println(lessonDto.getName());
+        System.out.println(lessonDto.getId());
+        return lessonDto;
+
     }
 
     @Override

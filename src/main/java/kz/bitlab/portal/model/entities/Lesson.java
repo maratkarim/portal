@@ -30,7 +30,7 @@ public class Lesson {
 
     private LocalDateTime updatedTime;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "chapter_id", nullable = false)
     Chapter chapter;
 }

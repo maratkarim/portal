@@ -40,8 +40,9 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleException(Exception e, WebRequest request) {
-        String errorMessage = "Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.";
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorMessage);
+    public ResponseEntity<String> handleGeneralException(Exception ex) {
+        String errorMessage = "Произошла ошибка на сервере: " + ex.getMessage();
+        log.error("Ошибка на сервере", ex);
+        return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

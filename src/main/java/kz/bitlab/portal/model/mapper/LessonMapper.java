@@ -11,8 +11,6 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface LessonMapper {
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "createdTime", ignore = true)
-    @Mapping(target = "updatedTime", ignore = true)
     @Mapping(target = "order", ignore = true)
     @Mapping(target = "chapter", ignore = true)
     Lesson createLessonDtoToEntity(CreateLessonDto createLessonDto);
