@@ -30,12 +30,12 @@ public class LessonController {
     }
 
     @GetMapping("/{id}")
-//    @Operation(summary = "Получить урока по ID", description = "Запрос для получения информации о уроке по уникальному идентификатору (ID)")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200", description = "Данные о уроке успешно отображены"),
-//            @ApiResponse(responseCode = "404", description = "Урок с таким ID не найден"),
-//            @ApiResponse(responseCode = "500" , description = "Внутренняя ошибка сервера")
-//    })
+    @Operation(summary = "Получить урока по ID", description = "Запрос для получения информации о уроке по уникальному идентификатору (ID)")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Данные о уроке успешно отображены"),
+            @ApiResponse(responseCode = "404", description = "Урок с таким ID не найден"),
+            @ApiResponse(responseCode = "500" , description = "Внутренняя ошибка сервера")
+    })
     public GetLessonDto getLesson(@PathVariable("id") Long id){
         return lessonService.getLessonById(id);
     }
